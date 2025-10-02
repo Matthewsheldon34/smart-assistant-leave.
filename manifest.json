@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Auto-Reply Assistant",
+  "version": "1.0.0",
+  "description": "Capture selected text and generate AI smart replies instantly.",
+  "permissions": ["scripting", "activeTab", "storage", "clipboardWrite"],
+  "host_permissions": [
+    "http://localhost:8080/*",
+    "https://your-smart-reply-api.com/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Smart Reply"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.linkedin.com/*",
+        "*://web.whatsapp.com/*",
+        "*://*.twitter.com/*",
+        "*://mail.google.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

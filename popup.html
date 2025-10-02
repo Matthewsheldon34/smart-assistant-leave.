@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Reply</title>
+</head>
+<body>
+  <h2>Smart Reply</h2>
+
+  <label for="inputText">Message / Topic:</label><br>
+  <textarea id="inputText" rows="3" placeholder="Paste a message..."></textarea><br><br>
+<link rel="stylesheet" href="popup.css">
+
+  <label for="tone">Tone:</label>
+  <select id="tone">
+    <option value="formal">Formal</option>
+    <option value="friendly">Friendly</option>
+    <option value="brief">Brief</option>
+    <option value="humorous">Humorous</option>
+    <option value="professional">Professional</option>
+  </select><br><br>
+
+  <!-- Plain button with id -->
+  <button id="generate">Generate Reply</button>
+
+  <div id="replyBox">
+    <h3>Suggestions:</h3>
+    <ul id="suggestions"></ul>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
